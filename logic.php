@@ -4,7 +4,7 @@
     ini_set("display_errors", "off");
 
     // Initialize a database connection
-    $conn = mysqli_connect("localhost", "root", "", "packetcode-test");
+    $conn = mysqli_connect("localhost", "homestead", "secret", "packetcode-test");
 
     // Destroy if not possible to create a connection
     if(!$conn){
@@ -22,6 +22,8 @@
 
         $sql = "INSERT INTO data(title, content) VALUES('$title', '$content')";
         mysqli_query($conn, $sql);
+
+        echo $sql;
 
         header("Location: index.php?info=added");
         exit();

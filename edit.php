@@ -18,7 +18,7 @@
 <body>
 
    <div class="container mt-5">
-        <?php foreach($query as $q){?>
+        <?php foreach($query as $q){ ?>
             <form method="POST">
                 <input type="text" hidden value='<?php echo $q['id']?>' name="id">
                 <input type="text" placeholder="Blog Title" class="form-control my-3 bg-dark text-white text-center" name="title" value="<?php echo $q['title']?>">
