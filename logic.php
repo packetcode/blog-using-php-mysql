@@ -4,7 +4,7 @@
     ini_set("display_errors", "off");
 
     // Initialize a database connection
-    $conn = mysqli_connect("localhost", "u594601926_projects", "Projects@1", "u594601926_projects ");
+    $conn = mysqli_connect("localhost", "u594601926_projects", "Projects@1", "u594601926_projects");
 
     // Destroy if not possible to create a connection
     if(!$conn){
