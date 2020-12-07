@@ -12,7 +12,7 @@
     }
 
     // Get data to display on index page
-    $sql = "SELECT * FROM data";
+    $sql = "SELECT * FROM blog_data";
     $query = mysqli_query($conn, $sql);
 
     // Create a new post
@@ -20,7 +20,7 @@
         $title = $_REQUEST['title'];
         $content = $_REQUEST['content'];
 
-        $sql = "INSERT INTO data(title, content) VALUES('$title', '$content')";
+        $sql = "INSERT INTO blog_data(title, content) VALUES('$title', '$content')";
         mysqli_query($conn, $sql);
 
         echo $sql;
@@ -32,7 +32,7 @@
     // Get post data based on id
     if(isset($_REQUEST['id'])){
         $id = $_REQUEST['id'];
-        $sql = "SELECT * FROM data WHERE id = $id";
+        $sql = "SELECT * FROM blog_data WHERE id = $id";
         $query = mysqli_query($conn, $sql);
     }
 
@@ -40,7 +40,7 @@
     if(isset($_REQUEST['delete'])){
         $id = $_REQUEST['id'];
 
-        $sql = "DELETE FROM data WHERE id = $id";
+        $sql = "DELETE FROM blog_data WHERE id = $id";
         mysqli_query($conn, $sql);
 
         header("Location: index.php");
@@ -53,7 +53,7 @@
         $title = $_REQUEST['title'];
         $content = $_REQUEST['content'];
 
-        $sql = "UPDATE data SET title = '$title', content = '$content' WHERE id = $id";
+        $sql = "UPDATE blog_data SET title = '$title', content = '$content' WHERE id = $id";
         mysqli_query($conn, $sql);
 
         header("Location: index.php");
